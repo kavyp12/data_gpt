@@ -1,0 +1,6 @@
+2025-06-06 13:58:00,047 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-06 13:58:00,679 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/all-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-06-06 13:58:01,597 - __main__ - ERROR - Error loading metadata: Expecting value: line 630 column 7 (char 12332)
+2025-06-06 13:58:33,734 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-06-06 13:58:34,386 - sentence_transformers.SentenceTransformer - WARNING - No sentence-transformers model found with name sentence-transformers/all-MiniLM-L6-v2. Creating a new one with mean pooling.
+2025-06-06 13:58:35,068 - __main__ - ERROR - Error loading metadata: Expecting value: line 630 column 7 (char 12332)

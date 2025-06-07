@@ -1,0 +1,64 @@
+
+<!-- answer.html (updated) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .question-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .answer-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Analysis Result</h1>
+    
+    <div class="question-box">
+        <h3>❓ Your Question:</h3>
+        <p><strong>{{ question }}</strong></p>
+    </div>
+    
+    <div class="answer-box">
+        <h3>💡 Answer:</h3>
+        <div>{{ answer | safe }}</div>
+    </div>
+    
+    <div style="margin-top: 30px;">
+        <a href="/#ask" class="btn">🔄 Ask Another Question</a>
+        <a href="/" class="btn">🏠 Back to Home</a>
+        <a href="/data-summary" class="btn">📊 View Data Summary</a>
+    </div>
+    
+    <div style="margin-top: 20px; padding: 15px; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px;">
+        <small>
+            <strong>💡 Tip:</strong> The system learns from all your uploaded data permanently. 
+            You can upload more files anytime to expand the knowledge base!
+        </small>
+    </div>
+</body>
+</html>

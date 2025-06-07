@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Sales Analysis Result</h1>
+    <h2>Top 3 Selling Products by Quantity</h2>
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Total Quantity Sold</th>
+            <th>Total Sales</th>
+        </tr>
+        {% for product in result.by_quantity %}
+        <tr>
+            <td>{{ product.Product }}</td>
+            <td>{{ product['Total Quantity Sold'] }}</td>
+            <td>{{ product['Total Sales'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Top 3 Selling Products by Value</h2>
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Total Quantity Sold</th>
+            <th>Total Sales</th>
+        </tr>
+        {% for product in result.by_value %}
+        <tr>
+            <td>{{ product.Product }}</td>
+            <td>{{ product['Total Quantity Sold'] }}</td>
+            <td>{{ product['Total Sales'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Upload Another File</a>
+</body>
+</html>

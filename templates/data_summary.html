@@ -1,0 +1,76 @@
+
+<!-- data_summary.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .summary-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 Data Summary</h1>
+    
+    {% if summary == "No data learned yet." %}
+    <div class="summary-box">
+        <p>{{ summary }}</p>
+        <a href="/" class="btn">Upload Files</a>
+    </div>
+    {% else %}
+    <div class="summary-box">
+        <h3>📈 Knowledge Base Statistics</h3>
+        <p><strong>Total Records:</strong> {{ summary.total_records }}</p>
+        <p><strong>Files Processed:</strong> {{ summary.files_processed }}</p>
+        {% if summary.date_range.first_added %}
+        <p><strong>First Data Added:</strong> {{ summary.date_range.first_added[:19] }}</p>
+        <p><strong>Last Data Added:</strong> {{ summary.date_range.last_added[:19] }}</p>
+        {% endif %}
+        
+        <h4>📋 Available Columns</h4>
+        <div style="background-color: white; padding: 10px; border-radius: 3px;">
+            {% for column in summary.columns %}
+            <span style="display: inline-block; background-color: #007bff; color: white; padding: 3px 8px; margin: 2px; border-radius: 3px; font-size: 12px;">{{ column }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+    
+    <div style="margin-top: 20px;">
+        <a href="/" class="btn">🏠 Back to Home</a>
+        <a href="/#ask" class="btn">💬 Ask Questions</a>
+    </div>
+</body>
+</html>
